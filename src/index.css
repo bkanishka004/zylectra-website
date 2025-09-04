@@ -1,7 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.pre-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.main-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 600; /* bold */
+}
+
+.sub-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+.logo-img {
+  background: transparent;  /* doesn’t remove existing white fill */
+  mix-blend-mode: multiply; /* makes the white less visible */
+}
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }

@@ -18,11 +18,14 @@ const CallToAction = () => {
     <section id="cta" className="py-20 bg-gradient-to-br from-emerald-600 to-green-700">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="text-white animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
+          {/* Main Heading */}
+          <h2 className="main-heading mb-4 sm:mb-6 px-4">
             Get Early Access to Orbit
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-emerald-300 mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-lg sm:text-xl md:text-2xl text-emerald-100 mb-8 sm:mb-12 leading-relaxed px-4">
+
+ 
+          <p className="sub-heading text-emerald-100 mb-8 sm:mb-12 leading-relaxed px-4">
             Join the exclusive early access list and be among the first to experience 
             the future of intelligent EV operations.
           </p>
@@ -35,7 +38,7 @@ const CallToAction = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
+                  placeholder="email address"
                   className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 rounded-full text-gray-900 bg-white border-0 focus:ring-4 focus:ring-emerald-300 outline-none text-base sm:text-lg"
                   required
                 />
@@ -60,7 +63,7 @@ const CallToAction = () => {
             </div>
           </form>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-emerald-200 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-emerald-200 pre-heading">
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4" />
               No spam, ever
