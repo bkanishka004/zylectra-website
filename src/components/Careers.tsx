@@ -84,97 +84,105 @@ const Careers: React.FC = () => {
 
   return (
     <div id="careers" className="max-w-2xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-semibold text-center mb-6">Join Our Team</h2>
+      
+      <h2 className="main-heading text-center mb-6">Join Our Team</h2>
+
       {isSubmittedSuccessfully ? (
-        <div className="text-center text-lg text-emerald-700 font-medium bg-emerald-50 border border-emerald-200 rounded-lg px-6 py-10 mt-8 shadow-sm animate-fade-in-up">
+        <div className="text-center sub-heading text-emerald-700 font-medium bg-emerald-50 border border-emerald-200 rounded-lg px-6 py-10 mt-8 shadow-sm animate-fade-in-up">
           Thanks for your response!<br />Our team will review your application and contact you.
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          
           <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Full Name *
-          </label>
-          <input
-            type="text"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
+            <label className="pre-heading block text-gray-700 mb-1">
+              Full Name *
+            </label>
+            <input
+              type="text"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Email Address *
-          </label>
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
+       
+          <div>
+            <label className="pre-heading block text-gray-700 mb-1">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Position Applied For *
-          </label>
-          <select
-            value={formData.position}
-            onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-            required
+          
+          <div>
+            <label className="pre-heading block text-gray-700 mb-1">
+              Position Applied For *
+            </label>
+            <select
+              value={formData.position}
+              onChange={(e) => setFormData({ ...formData, position: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+              required
+              disabled={isSubmitting}
+            >
+              <option value="">Select a position</option>
+              <option value="App Developer">App Developer</option>
+              <option value="AI/ML Engineer">AI/ML Engineer</option>
+            </select>
+          </div>
+
+          
+          <div>
+            <label className="pre-heading block text-gray-700 mb-1">
+              Why are you interested in this position? *
+            </label>
+            <textarea
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+              rows={4}
+              disabled={isSubmitting}
+            />
+          </div>
+
+          {/* CV */}
+          <div>
+            <label className="pre-heading block text-gray-700 mb-1">
+              Resume Link (Google Drive, Dropbox, etc.) *
+            </label>
+            <input
+              type="url"
+              value={formData.cvLink}
+              onChange={(e) => setFormData({ ...formData, cvLink: e.target.value })}
+              placeholder="https://drive.google.com/..."
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-lg transition"
             disabled={isSubmitting}
           >
-            <option value="">Select a position</option>
-            <option value="App Developer">App Developer</option>
-            <option value="AI/ML Engineer">AI/ML Engineer</option>
-          </select>
-        </div>
+            {isSubmitting ? 'Submitting...' : 'Submit Application'}
+          </button>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Why are you interested in this position? 
-          </label>
-          <textarea
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-            rows={4}
-            disabled={isSubmitting}
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Resume Link (Google Drive, Dropbox, etc.) *
-          </label>
-          <input
-            type="url"
-            value={formData.cvLink}
-            onChange={(e) => setFormData({ ...formData, cvLink: e.target.value })}
-            placeholder="https://drive.google.com/..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-lg transition"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit Application'}
-        </button>
-
-        {submissionStatus && (
-          <p className="text-center text-sm text-red-600">{submissionStatus}</p>
-        )}
+          {submissionStatus && (
+            <p className="text-center pre-heading text-red-600">{submissionStatus}</p>
+          )}
         </form>
       )}
     </div>
