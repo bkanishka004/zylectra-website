@@ -11,10 +11,8 @@ const SectionThree = () => {
           Zylectra is <span className="text-emerald-600">building the brain</span> of your EV.
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-12 animate-fade-in opacity-80">
-  Orbit is the <span className="font-bold text-gray-900">first layer</span>, a smart operating system that connects:
-</p>
-
-
+          Orbit is the <span className="font-bold text-gray-900">first layer</span>, a smart operating system that connects:
+        </p>
        
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-12">
           <div className="flex items-center gap-3 bg-white shadow-md px-6 py-4 rounded-xl hover:shadow-lg transition-all">
@@ -33,7 +31,7 @@ const SectionThree = () => {
 
        
         <div className="mb-16">
-          <button onClick={() => scrollToSection("careers")}
+          <button onClick={() => scrollToSection("cta")}
            className="px-10 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 shadow-lg hover:shadow-emerald-400/50 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 animate-bounce-slow">
             Reserve Your Spot — Be an Early Pioneer
             
