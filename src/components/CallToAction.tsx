@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, ArrowRight, Check, User, ChevronDown } from 'lucide-react';
+import { Mail, ArrowRight, Check, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const CallToAction = () => {
   const [email, setEmail] = useState('');
   const [userType, setUserType] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const userTypes = [
     { value: 'personal', label: 'Personal EV Owner', icon: '🚗' },
@@ -12,15 +14,46 @@ const CallToAction = () => {
     { value: 'cpo', label: 'CPO (Charge Point Operator)', icon: '⚡' }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && userType) {
+    if (!email || !userType) return;
+
+    setIsLoading(true);
+
+    const adminTemplateParams = {
+      to_email: import.meta.env.VITE_YOUR_EMAIL!,
+      user_email: email,
+      user_type: userType,
+    };
+
+    try {
+      // Send email to YOU
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+        adminTemplateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+      );
+
+      // Send confirmation email to USER
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_CONFIRM_TEMPLATE_ID!,
+        { to_email: email, user_type: userType },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+      );
+
       setIsSubmitted(true);
       setEmail('');
       setUserType('');
       setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (err) {
+      console.error('FAILED...', err);
+    } finally {
+      setIsLoading(false);
     }
   };
+
 
   return (
     <section id="cta" className="py-20 bg-gradient-to-br from-emerald-600 to-teal-700 relative overflow-hidden">
@@ -126,12 +159,17 @@ const CallToAction = () => {
               </div>
 
               {/* Submit Button */}
-              <button
+               <button
                 type="submit"
-                disabled={isSubmitted}
+                disabled={isSubmitted || isLoading}
                 className="w-full bg-white text-emerald-600 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-3 disabled:opacity-50 disabled:transform-none"
               >
-                {isSubmitted ? (
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                    <span>Processing...</span>
+                  </>
+                ) : isSubmitted ? (
                   <>
                     <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center">
                       <Check className="w-4 h-4 text-white" />

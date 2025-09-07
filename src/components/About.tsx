@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, GraduationCap, Star, Zap, Brain } from 'lucide-react';
+import { Award, GraduationCap, Star } from 'lucide-react';
 
 const About = () => {
   return (

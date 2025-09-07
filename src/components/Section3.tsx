@@ -1,89 +1,181 @@
-import React from "react";
-import { scrollToSection } from "../utils/scrollToSection"; 
-import { Car, BatteryCharging, Zap } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Car, BatteryCharging, Zap, ArrowRight, Sparkles } from "lucide-react";
 
 const SectionThree = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative py-24 bg-gray-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="relative py-32 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/50 overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-200/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-200/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-700"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-300/10 rounded-full mix-blend-multiply filter blur-2xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
-          Zylectra is <span className="text-emerald-600">building the brain</span> of your EV.
-        </h2>
-        <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-12 animate-fade-in opacity-80">
-          Orbit is the <span className="font-bold text-gray-900">first layer</span>, a smart operating system that connects:
-        </p>
-       
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-12">
-          <div className="flex items-center gap-3 bg-white shadow-md px-6 py-4 rounded-xl hover:shadow-lg transition-all">
-            <Car className="w-8 h-8 text-emerald-600" />
-            <span className="text-gray-800 font-medium">Your routes </span>
-          </div>
-          <div className="flex items-center gap-3 bg-white shadow-md px-6 py-4 rounded-xl hover:shadow-lg transition-all">
-            <BatteryCharging className="w-8 h-8 text-emerald-600" />
-            <span className="text-gray-800 font-medium">Your charging </span>
-          </div>
-          <div className="flex items-center gap-3 bg-white shadow-md px-6 py-4 rounded-xl hover:shadow-lg transition-all">
-            <Zap className="w-8 h-8 text-emerald-600" />
-            <span className="text-gray-800 font-medium">Your energy usage </span>
-          </div>
-        </div>
-
-       
-        <div className="mb-16">
-          <button onClick={() => scrollToSection("cta")}
-           className="px-10 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 shadow-lg hover:shadow-emerald-400/50 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 animate-bounce-slow">
-            Reserve Your Spot — Be an Early Pioneer
+        {/* Header Section */}
+        <div className="text-center mb-20">
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="inline-flex items-center gap-2 px-6 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6 shadow-sm">
+              <Sparkles className="w-4 h-4" />
+              Introducing Orbit OS
+            </div>
             
-          </button>
+            <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Zylectra is{" "}
+              <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent animate-pulse">
+                building the brain
+              </span>
+              <br />
+              of your EV fleet.
+            </h2>
+            
+            <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Orbit is the{" "}
+              <span className="font-bold text-gray-900 bg-gradient-to-r from-emerald-100 to-teal-100 px-2 py-1 rounded-lg">
+                first intelligent layer
+              </span>
+              , a smart operating system that seamlessly connects:
+            </p>
+          </div>
         </div>
 
-       
-   
-<div className="grid sm:grid-cols-3 gap-10 mt-16">
-  
-  <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100">
-    <div className="relative w-full h-64 bg-gray-50 rounded-xl overflow-hidden border border-gray-200 mb-4">
-      <img 
-        src="src/assets/route.png"  
-        alt="Route Planning Screenshot" 
-        className="w-full h-full object-contain p-2 hover:scale-105 transition-transform"
-      />
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 mb-2">Smart Route Planning</h3>
-    <p className="text-gray-600 text-sm leading-relaxed">
-      Orbit plans routes that keep you confident — never worry about running out of charge.
-    </p>
-  </div>
+        {/* Connection Cards */}
+        <div className={`flex flex-col lg:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {[
+            { icon: Car, text: "Smart Routes", color: "from-blue-500 to-emerald-500" },
+            { icon: BatteryCharging, text: "Intelligent Charging", color: "from-emerald-500 to-teal-500" },
+            { icon: Zap, text: "Energy Optimization", color: "from-teal-500 to-cyan-500" }
+          ].map((item, index) => (
+            <React.Fragment key={index}>
+              <div className="group relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+                <div className="relative flex items-center gap-4 bg-white px-8 py-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 min-w-[250px]">
+                  <div className={`p-3 rounded-xl bg-gradient-to-r ${item.color} shadow-lg`}>
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-gray-800 font-semibold text-lg">{item.text}</span>
+                </div>
+              </div>
+              {index < 2 && (
+                <ArrowRight className="hidden lg:block w-6 h-6 text-emerald-500 animate-pulse" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
 
-  <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100">
-    <div className="relative w-full h-64 bg-gray-50 rounded-xl overflow-hidden border border-gray-200 mb-4">
-      <img 
-        src="src/assets/charger.png" 
-        alt="Smart Charging Screenshot" 
-        className="w-full h-full object-contain p-2 hover:scale-105 transition-transform"
-      />
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 mb-2">Optimized Charging</h3>
-    <p className="text-gray-600 text-sm leading-relaxed">
-      Smart charging recommendations ensure optimal stops along the way.
-    </p>
-  </div>
+        {/* CTA Button */}
+        <div className={`text-center mb-20 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="relative inline-block group">
+            <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-500 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
+            <button 
+              onClick={() => scrollToSection("cta")}
+              className="relative px-12 py-5 text-xl font-bold text-white rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 shadow-2xl hover:shadow-emerald-500/50 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center gap-3 mx-auto"
+            >
+              <Sparkles className="w-5 h-5 animate-spin" />
+              Reserve Your Spot — Be an Early Pioneer
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        </div>
 
- 
-  <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100">
-    <div className="relative w-full h-64 bg-gray-50 rounded-xl overflow-hidden border border-gray-200 mb-4">
-      <img 
-        src="src/assets/optimize.png" 
-        alt="Energy Tracking Screenshot" 
-        className="w-full h-full object-contain p-2 hover:scale-105 transition-transform"
-      />
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 mb-2">Energy Insights</h3>
-    <p className="text-gray-600 text-sm leading-relaxed">
-      Track and optimize your EV’s energy usage seamlessly.
-    </p>
-  </div>
-</div>
+        {/* Feature Cards Grid */}
+        <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {[
+            {
+              title: "Smart Route Planning",
+              description: "Orbit plans intelligent routes that keep your fleet confident — never worry about running out of charge with predictive analytics.",
+              image: "src/assets/route.png",
+              gradient: "from-blue-500/10 to-emerald-500/10",
+              iconColor: "text-blue-600"
+            },
+            {
+              title: "Optimized Charging",
+              description: "Smart charging recommendations ensure optimal stops along the way, reducing downtime and maximizing efficiency.",
+              image: "src/assets/charger.png",
+              gradient: "from-emerald-500/10 to-teal-500/10",
+              iconColor: "text-emerald-600"
+            },
+            {
+              title: "Energy Insights",
+              description: "Track and optimize your EV fleet's energy usage with real-time analytics and actionable insights for cost savings.",
+              image: "src/assets/optimize.png",
+              gradient: "from-teal-500/10 to-cyan-500/10",
+              iconColor: "text-teal-600"
+            }
+          ].map((feature, index) => (
+            <div 
+              key={index} 
+              className={`group relative transition-all duration-500 delay-${(index + 1) * 100}`}
+              style={{ animationDelay: `${(index + 1) * 100}ms` }}
+            >
+              {/* Hover Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              
+              <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100/50 h-full">
+                {/* Image Container */}
+                <div className="relative w-full h-48 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl overflow-hidden border border-gray-200/50 mb-6 group">
+                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img 
+                    src={feature.image}
+                    alt={`${feature.title} Screenshot`} 
+                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* Overlay Icon */}
+                  <div className="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Zap className={`w-5 h-5 ${feature.iconColor}`} />
+                  </div>
+                </div>
 
-</div> </section> ); }; export default SectionThree; 
+                {/* Content */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-base">
+                    {feature.description}
+                  </p>
+                </div>
+
+                {/* Corner Decoration */}
+                <div className="absolute top-6 left-6 w-12 h-12 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Decoration */}
+        <div className="text-center mt-20">
+          <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-full shadow-inner">
+            <div className="flex gap-2">
+              {[...Array(3)].map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 animate-pulse`}
+                  style={{ animationDelay: `${i * 200}ms` }}
+                ></div>
+              ))}
+            </div>
+            <span className="text-gray-600 font-medium">Powered by Zylectra AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SectionThree;
