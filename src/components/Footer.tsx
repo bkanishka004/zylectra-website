@@ -34,7 +34,11 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="relative group">
-                <img src="src\assets\image.jpg" alt="Zylectra Logo" className="w-12 h-12 rounded-full" />
+                <img
+      src="/image.png.jpg"
+      alt="Decorative Footer Image"
+      className="w-full max-w-md mx-auto object-contain"
+    />
               </div>
               <div>
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
