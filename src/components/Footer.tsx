@@ -33,13 +33,22 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative group">
+              {/* <div className="relative group">
                 <img
-      src="/image.png.jpg"
-      alt="Decorative Footer Image"
-      className="w-full max-w-md mx-auto object-contain"
-    />
-              </div>
+  src="/Screenshot_2025-09-08_160915-removebg-preview.png"
+  alt="Zylectra Footer Visual"
+  className="w-full max-w-sm mx-auto md:max-w-md rounded-lg shadow-lg object-contain my-6"
+/>
+
+              </div> */}
+              <div className="flex items-center space-x-4">
+  <img
+    src="/Screenshot_2025-09-08_160915-removebg-preview.png"
+    alt="Zylectra Logo"
+    className="w-12 h-12 object-contain rounded"
+  />
+  
+</div>
               <div>
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                   Zylectra

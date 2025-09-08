@@ -37,7 +37,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("hero")}
           >
             <img
-              src="src\assets\image.jpg"
+              src="\image.jpg"
               alt="Zylectra Logo"
               className="w-10 h-10 object-contain mix-blend-multiply"
             />
