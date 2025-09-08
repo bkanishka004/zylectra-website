@@ -12,7 +12,7 @@ const SectionThree = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -26,15 +26,14 @@ const SectionThree = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
         {/* Header Section */}
         <div className="text-center mb-20">
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="inline-flex items-center gap-2 px-6 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6 shadow-sm">
               <Sparkles className="w-4 h-4" />
               Introducing Orbit OS
             </div>
-            
+
             <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Zylectra is{" "}
               <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent animate-pulse">
@@ -43,7 +42,7 @@ const SectionThree = () => {
               <br />
               of your EV fleet.
             </h2>
-            
+
             <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
               Orbit is the{" "}
               <span className="font-bold text-gray-900 bg-gradient-to-r from-emerald-100 to-teal-100 px-2 py-1 rounded-lg">
@@ -55,11 +54,11 @@ const SectionThree = () => {
         </div>
 
         {/* Connection Cards */}
-        <div className={`flex flex-col lg:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`flex flex-col lg:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
             { icon: Car, text: "Smart Routes", color: "from-blue-500 to-emerald-500" },
             { icon: BatteryCharging, text: "Intelligent Charging", color: "from-emerald-500 to-teal-500" },
-            { icon: Zap, text: "Energy Optimization", color: "from-teal-500 to-cyan-500" }
+            { icon: Zap, text: "Energy Optimization", color: "from-teal-500 to-cyan-500" },
           ].map((item, index) => (
             <React.Fragment key={index}>
               <div className="group relative">
@@ -79,10 +78,10 @@ const SectionThree = () => {
         </div>
 
         {/* CTA Button */}
-        <div className={`text-center mb-20 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-20 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="relative inline-block group">
             <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-500 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
-            <button 
+            <button
               onClick={() => scrollToSection("cta")}
               className="relative px-12 py-5 text-xl font-bold text-white rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 shadow-2xl hover:shadow-emerald-500/50 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center gap-3 mx-auto"
             >
@@ -94,46 +93,46 @@ const SectionThree = () => {
         </div>
 
         {/* Feature Cards Grid */}
-        <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
             {
               title: "Smart Route Planning",
               description: "Orbit plans intelligent routes that keep your fleet confident — never worry about running out of charge with predictive analytics.",
-              image: "src/assets/route.png",
+              image: "/route.png",
               gradient: "from-blue-500/10 to-emerald-500/10",
-              iconColor: "text-blue-600"
+              iconColor: "text-blue-600",
             },
             {
               title: "Optimized Charging",
               description: "Smart charging recommendations ensure optimal stops along the way, reducing downtime and maximizing efficiency.",
-              image: "src/assets/charger.png",
+              image: "/charger.png",
               gradient: "from-emerald-500/10 to-teal-500/10",
-              iconColor: "text-emerald-600"
+              iconColor: "text-emerald-600",
             },
             {
               title: "Energy Insights",
               description: "Track and optimize your EV fleet's energy usage with real-time analytics and actionable insights for cost savings.",
-              image: "src/assets/optimize.png",
+              image: "/optimize.png",
               gradient: "from-teal-500/10 to-cyan-500/10",
-              iconColor: "text-teal-600"
-            }
+              iconColor: "text-teal-600",
+            },
           ].map((feature, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`group relative transition-all duration-500 delay-${(index + 1) * 100}`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
               {/* Hover Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-              
+
               <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100/50 h-full">
                 {/* Image Container */}
                 <div className="relative w-full h-48 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl overflow-hidden border border-gray-200/50 mb-6 group">
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <img 
+                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img
                     src={feature.image}
-                    alt={`${feature.title} Screenshot`} 
-                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                    alt={`${feature.title} Screenshot`}
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Overlay Icon */}
                   <div className="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -163,11 +162,11 @@ const SectionThree = () => {
           <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-full shadow-inner">
             <div className="flex gap-2">
               {[...Array(3)].map((_, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className={`w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 animate-pulse`}
                   style={{ animationDelay: `${i * 200}ms` }}
-                ></div>
+                />
               ))}
             </div>
             <span className="text-gray-600 font-medium">Powered by Zylectra AI</span>
