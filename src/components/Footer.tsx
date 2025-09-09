@@ -1,5 +1,5 @@
 import React from "react";
-import { Zap, Brain, Linkedin, Mail, MapPin, Globe, ArrowUp } from "lucide-react";
+import { Linkedin, Mail, MapPin, Globe, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -35,10 +35,10 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="relative group">
                 <img
-      src="/image.png.jpg"
-      alt="Decorative Footer Image"
-      className="w-full max-w-md mx-auto object-contain"
-    />
+                  src="/image.png.jpg"
+                  alt="Decorative Footer Image"
+                  className="w-12 h-12 rounded-full"
+                />
               </div>
               <div>
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
