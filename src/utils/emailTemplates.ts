@@ -1,12 +1,12 @@
 // Email template configurations for EmailJS
 
 export const EMAIL_CONFIG = {
-  // Replace these with your actual EmailJS configuration
   SERVICE_ID: 'service_zylectra',
   COMPANY_TEMPLATE_ID: 'template_company',
   THANKYOU_TEMPLATE_ID: 'template_thankyou',
-  PUBLIC_KEY: 'your_public_key'
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
+
 
 // Template for company notification email
 export const COMPANY_EMAIL_TEMPLATE = `
