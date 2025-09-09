@@ -9,7 +9,7 @@ const About = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="relative">
-              <img src="src\assets\image.jpg" alt="Zylectra Logo" className="w-12 h-12 rounded-full" />
+              <img src="\image.jpg" alt="Zylectra Logo" className="w-12 h-12 rounded-full" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               About <span className="text-emerald-600">Zylectra</span>
@@ -52,7 +52,7 @@ const About = () => {
               
               <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
                 <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center">
-                  <img src="src/assets/thapar innovate.jpg" alt="thapar-innovate-logo" />
+                  <img src="/thapar innovate.jpg" alt="thapar-innovate-logo" />
                 </div>
                 <span className="text-xs text-gray-500 font-medium">Thapar Innovate Incubation</span>
               </div>
@@ -79,7 +79,7 @@ const About = () => {
               
               <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
                 <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
-                  <img src="src/assets/ihfc.jpg" alt="iit-delhi-logo" />
+                  <img src="/ihfc.jpg" alt="iit-delhi-logo" />
                 </div>
                 <span className="text-xs text-gray-500 font-medium">READY Program</span>
               </div>
@@ -106,7 +106,7 @@ const About = () => {
               
               <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
                 <div className="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
-                  <img src="src/assets/thapar.png" alt="thapar-university-logo" />
+                  <img src="/thapar.png" alt="thapar-university-logo" />
                 </div>
                 <span className="text-xs text-gray-500 font-medium">TIET Patiala</span>
               </div>

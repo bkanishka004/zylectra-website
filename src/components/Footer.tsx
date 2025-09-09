@@ -35,9 +35,9 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="relative group">
                 <img
-                  src="/image.png.jpg"
-                  alt="Decorative Footer Image"
-                  className="w-12 h-12 rounded-full"
+                  src="/footer-logo.jpg"
+                  alt="Zylectra Footer Image"
+                  className="w-12 h-12 object-cover rounded-full"
                 />
               </div>
               <div>
