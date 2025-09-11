@@ -161,31 +161,6 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-
-              {/* Quick Links */}
-              <div>
-                <p className="text-gray-400 text-xs uppercase tracking-wide mb-3">Quick Links</p>
-                <div className="space-y-2">
-                  <a
-                    href="#"
-                    className="block text-gray-300 hover:text-emerald-400 transition-colors text-sm py-1"
-                  >
-                    Privacy Policy
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-gray-300 hover:text-emerald-400 transition-colors text-sm py-1"
-                  >
-                    Terms of Service
-                  </a>
-                  <a
-                    href="mailto:zylectra.official@gmail.com"
-                    className="block text-gray-300 hover:text-emerald-400 transition-colors text-sm py-1"
-                  >
-                    Support
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

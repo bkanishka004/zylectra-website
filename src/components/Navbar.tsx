@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-
+import ComingSoonPopup from "./Blogs";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showBlogPopup, setShowBlogPopup] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,10 +61,10 @@ const Navbar = () => {
               Features
             </button>
             <button
-              onClick={() => scrollToSection("how-it-works")}
+              onClick={() => setShowBlogPopup(true)}
               className="text-gray-700 hover:text-emerald-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-emerald-50"
             >
-              How It Works
+              Blogs
             </button>
             <button
               onClick={() => scrollToSection("careers")}
@@ -107,10 +108,10 @@ const Navbar = () => {
                 Features
               </button>
               <button
-                onClick={() => scrollToSection("how-it-works")}
+                onClick={() => setShowBlogPopup(true)}
                 className="text-gray-700 hover:text-emerald-600 transition-all px-4 py-2 rounded-lg hover:bg-emerald-50"
               >
-                How It Works
+                Blogs
               </button>
               <button
                 onClick={() => scrollToSection("careers")}
@@ -128,6 +129,10 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      <ComingSoonPopup 
+        isOpen={showBlogPopup} 
+        onClose={() => setShowBlogPopup(false)} 
+      />
     </nav>
   );
 };

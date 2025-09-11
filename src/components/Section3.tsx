@@ -17,7 +17,7 @@ const SectionThree = () => {
   };
 
   return (
-    <section className="relative py-32 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/50 overflow-hidden" id="how-it-works">
+    <section className="relative py-32 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/50 overflow-hidden" id="features">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-200/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -31,16 +31,15 @@ const SectionThree = () => {
           <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="inline-flex items-center gap-2 px-6 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6 shadow-sm">
               <Sparkles className="w-4 h-4" />
-              Introducing Orbit OS
+              Introducing Zylectra Orbit
             </div>
 
-            <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              Zylectra is{" "}
-              <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent animate-pulse">
-                building the brain
-              </span>
+            <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-8 leading-snug">
+              Your EV, finally
               <br />
-              of your EV fleet.
+              <span className="block mt-2 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent animate-pulse">
+                smart to think ahead.
+              </span>
             </h2>
 
             <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
@@ -48,7 +47,7 @@ const SectionThree = () => {
               <span className="font-bold text-gray-900 bg-gradient-to-r from-emerald-100 to-teal-100 px-2 py-1 rounded-lg">
                 first intelligent layer
               </span>
-              , a smart operating system that seamlessly connects:
+              , that seamlessly connects:
             </p>
           </div>
         </div>

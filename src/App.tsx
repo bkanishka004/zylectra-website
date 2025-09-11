@@ -13,9 +13,9 @@ import Section7 from './components/Section7';
 import Section8 from './components/Section8';
 import Section9 from './components/Section9';
 
-function App() {
+function MainContent() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
+    <>
       <Navbar />
       <Hero />
       <SectionTwo />
@@ -29,8 +29,8 @@ function App() {
       <Careers />
       <CallToAction />
       <Footer />
-    </div>
+    </>
   );
 }
 
-export default App;
+export default MainContent;

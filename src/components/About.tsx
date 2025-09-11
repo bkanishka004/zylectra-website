@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, GraduationCap, Star } from 'lucide-react';
+import { Award, GraduationCap } from 'lucide-react';
 
 const About = () => {
   return (
@@ -30,7 +30,7 @@ const About = () => {
         </div>
 
         {/* Recognition Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
           
           {/* Thapar Innovate Card */}
           <div className="group relative">
@@ -82,33 +82,6 @@ const About = () => {
                   <img src="/ihfc.jpg" alt="iit-delhi-logo" />
                 </div>
                 <span className="text-xs text-gray-500 font-medium">READY Program</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Thapar Open Day Card */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative bg-white p-6 rounded-2xl border-2 border-amber-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                  <Star className="w-6 h-6 text-amber-600" />
-                </div>
-                <div className="px-3 py-1 bg-amber-600 text-white text-xs font-bold rounded-full">
-                  SHOWCASED
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Thapar Open Day 2025</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Showcased as a pioneering <span className="font-semibold text-amber-700">student-led EV initiative</span>.
-              </p>
-              
-              <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
-                <div className="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
-                  <img src="/thapar.png" alt="thapar-university-logo" />
-                </div>
-                <span className="text-xs text-gray-500 font-medium">TIET Patiala</span>
               </div>
             </div>
           </div>

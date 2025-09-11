@@ -10,7 +10,7 @@ import {
 
 const Section6 = () => {
   return (
-    <section className="relative py-16 px-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-100 overflow-hidden" id="features">
+    <section className="relative py-16 px-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-100 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 bg-emerald-400 rounded-full blur-2xl animate-pulse"></div>

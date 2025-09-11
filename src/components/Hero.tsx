@@ -25,9 +25,9 @@ const Hero = () => {
   };
 
   const features = [
-    { icon: MapPin, title: "Smart Routes", color: "from-blue-500 to-emerald-500", description: "AI-powered routing" },
-    { icon: Brain, title: "Intelligence", color: "from-emerald-500 to-teal-500", description: "Predictive analytics" },
-    { icon: Zap, title: "Fast Charging", color: "from-teal-500 to-cyan-500", description: "Optimal charging" }
+    { icon: MapPin, title: "Smart Routes", color: "from-blue-500 to-emerald-500", description: "Find the fastest, energy-efficient paths" },
+    { icon: Brain, title: "Predictive Insights", color: "from-emerald-500 to-teal-500", description: "Know your EV's needs before it tells you" },
+    { icon: Zap, title: "Optimized Charging", color: "from-teal-500 to-cyan-500", description: "Charge smarter, not longer" }
   ];
 
   return (
@@ -93,18 +93,12 @@ const Hero = () => {
 
         {/* Main Headlines */}
         <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="sm:text-[14px] md:text-[16px] lg:text-[18px] font-bold text-gray-800 mb-4 leading-tight">
-            The EV revolution is here.
-            <br />
-            <span className="text-gray-600">But it's missing one thing…</span>
-          </h2>
-          
           <div className="relative mb-8">
             <p className="sm:text-[32px] md:text-[48px] lg:text-[64px] font-black bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent leading-tight animate-pulse">
-              The operating system
+              Make your EV
             </p>
             <p className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-700 mt-2">
-              for your EV life.
+              smarter and effortless.
             </p>
             
             {/* Decorative underline */}
@@ -114,16 +108,11 @@ const Hero = () => {
 
         {/* Description */}
         <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="sm:text-[18px] md:text-[22px] lg:text-[28px] text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed font-light">
-            Zylectra Orbit makes every EV{" "}
-            <span className="font-bold text-emerald-700 bg-gradient-to-r from-emerald-100 to-teal-100 px-3 py-1 rounded-lg">
-              smarter
-            </span>
-            {" "}from charging to routes to real-time insights.
+          <p className="sm:text-[18px] md:text-[22px] lg:text-[28px] text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
+            Zylectra Orbit powers smarter routes, optimized charging, and real-time EV insights.
           </p>
           <p className="text-lg sm:text-xl text-gray-500 max-w-3xl mx-auto mb-12 font-medium">
-            So you don't just drive an EV, you{" "}
-            <span className="text-emerald-600 font-bold">drive the future.</span>
+            Don’t just drive an EV, <span className="text-emerald-600 font-bold">drive the future.</span>
           </p>
         </div>
 
