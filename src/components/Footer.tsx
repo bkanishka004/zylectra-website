@@ -62,10 +62,6 @@ const Footer = () => {
             {/* Stats */}
             <div className="flex gap-8 mt-8 pt-6 border-t border-gray-800">
               <div className="text-center">
-                <div className="text-2xl font-bold text-emerald-400">500+</div>
-                <div className="text-xs text-gray-500 uppercase tracking-wide">Early Users</div>
-              </div>
-              <div className="text-center">
                 <div className="text-2xl font-bold text-emerald-400">24/7</div>
                 <div className="text-xs text-gray-500 uppercase tracking-wide">Monitoring</div>
               </div>

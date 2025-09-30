@@ -23,8 +23,8 @@ const About = () => {
               We're building the intelligent operating system for the electric mobility revolution.
             </p>
             <p className="text-lg text-gray-600 mt-3">
-              Our flagship product, <span className="font-bold text-emerald-600 px-2 py-1 bg-emerald-50 rounded-lg">Zylectra Orbit</span>, 
-              is an AI-powered route and charging optimization platform designed for both personal EV owners and fleet operators.
+              Our flagship product, <span className="font-bold text-emerald-600 px-2 py-1 bg-emerald-50 rounded-lg">Zylectra Charge</span>, 
+              is an AI-powered charging optimization platform designed for both charging point and fleet operators.
             </p>
           </div>
         </div>

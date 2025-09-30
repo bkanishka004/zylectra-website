@@ -9,7 +9,6 @@ const CallToAction = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const userTypes = [
-    { value: 'personal', label: 'Personal EV Owner', icon: '🚗' },
     { value: 'fleet', label: 'Fleet Operator', icon: '🚛' },
     { value: 'cpo', label: 'CPO (Charge Point Operator)', icon: '⚡' }
   ];
@@ -83,7 +82,7 @@ const CallToAction = () => {
             
             <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Get Early Access to 
-              <span className="block text-emerald-200 mt-2">Orbit</span>
+              <span className="block text-emerald-200 mt-2">Zylectra Charge</span>
             </h2>
             
             <div className="w-24 h-1 bg-emerald-300 mx-auto mb-6 rounded-full"></div>
@@ -103,7 +102,7 @@ const CallToAction = () => {
                 <label className="block text-left text-emerald-100 font-semibold mb-3 text-lg">
                   I am a:
                 </label>
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   {userTypes.map((type) => (
                     <label
                       key={type.value}
@@ -222,17 +221,10 @@ const CallToAction = () => {
                 </div>
                 <div className="text-center">
                   <h4 className="font-semibold text-white mb-1">Early Access Perks</h4>
-                  <p className="text-emerald-200 text-sm">First to experience Orbit</p>
+                  <p className="text-emerald-200 text-sm">First to experience Zylectra Charge</p>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-8 text-center">
-            <p className="text-white text-sm">
-              Join <span className="font-bold">500+</span> EV professionals already on the list
-            </p>
           </div>
         </div>
       </div>

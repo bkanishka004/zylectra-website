@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Zap, Brain, Car, MapPin, Battery, Sparkles, Target, Cpu } from 'lucide-react';
+import { ArrowRight, Car, MapPin, Battery, Sparkles, Target, Cpu, BoltIcon, ClockIcon, BarChartBig } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,9 +25,24 @@ const Hero = () => {
   };
 
   const features = [
-    { icon: MapPin, title: "Smart Routes", color: "from-blue-500 to-emerald-500", description: "Find the fastest, energy-efficient paths" },
-    { icon: Brain, title: "Predictive Insights", color: "from-emerald-500 to-teal-500", description: "Know your EV's needs before it tells you" },
-    { icon: Zap, title: "Optimized Charging", color: "from-teal-500 to-cyan-500", description: "Charge smarter, not longer" }
+    {
+      title: "Real-Time Availability",
+      description: "Check free chargers & predicted wait times instantly.",
+      icon: BoltIcon,
+      color: "from-emerald-400 to-teal-400",
+    },
+    {
+      title: "Slot Showcase",
+      description: "Plan stops smartly with upcoming charger slot visibility.",
+      icon: ClockIcon,
+      color: "from-teal-400 to-emerald-500",
+    },
+    {
+      title: "CPO Insights",
+      description: "Monitor charger usage, revenue & downtime at a glance.",
+      icon: BarChartBig,
+      color: "from-emerald-500 to-green-400",
+    },
   ];
 
   return (
@@ -87,7 +102,7 @@ const Hero = () => {
               <Sparkles className="w-5 h-5 text-emerald-600 animate-spin" />
               <div className="absolute inset-0 bg-emerald-400 rounded-full opacity-20 animate-ping"></div>
             </div>
-            <span className="text-emerald-700 font-semibold text-lg">Introducing Zylectra Orbit</span>
+            <span className="text-emerald-700 font-semibold text-lg">Introducing Zylectra Charge</span>
           </div>
         </div>
 
@@ -107,12 +122,10 @@ const Hero = () => {
         </div>
 
         {/* Description */}
-        <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="sm:text-[18px] md:text-[22px] lg:text-[28px] text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
-            Zylectra Orbit powers smarter routes, optimized charging, and real-time EV insights.
-          </p>
-          <p className="text-lg sm:text-xl text-gray-500 max-w-3xl mx-auto mb-12 font-medium">
-            Don’t just drive an EV, <span className="text-emerald-600 font-bold">drive the future.</span>
+        <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} mb-12`}>
+          <p className="sm:text-[18px] md:text-[20px] lg:text-[24px] text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
+            From real-time charger availability to predictive intelligence, Zylectra Charge helps drivers charge 
+            smarter and CPOs earn more.
           </p>
         </div>
 

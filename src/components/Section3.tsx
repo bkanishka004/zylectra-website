@@ -31,23 +31,23 @@ const SectionThree = () => {
           <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="inline-flex items-center gap-2 px-6 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6 shadow-sm">
               <Sparkles className="w-4 h-4" />
-              Introducing Zylectra Orbit
+              Introducing Zylectra Charge
             </div>
 
             <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-8 leading-snug">
-              Your EV, finally
+              Charging infrastructure
               <br />
               <span className="block mt-2 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent animate-pulse">
-                smart to think ahead.
+                that thinks ahead.
               </span>
             </h2>
 
             <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Orbit is the{" "}
+              Zylectra Charge is the{" "}
               <span className="font-bold text-gray-900 bg-gradient-to-r from-emerald-100 to-teal-100 px-2 py-1 rounded-lg">
-                first intelligent layer
+                intelligent platform
               </span>
-              , that seamlessly connects:
+              {" "}for CPOs and EV fleets to maximize uptime and revenue:
             </p>
           </div>
         </div>
@@ -55,9 +55,9 @@ const SectionThree = () => {
         {/* Connection Cards */}
         <div className={`flex flex-col lg:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
-            { icon: Car, text: "Smart Routes", color: "from-blue-500 to-emerald-500" },
-            { icon: BatteryCharging, text: "Intelligent Charging", color: "from-emerald-500 to-teal-500" },
-            { icon: Zap, text: "Energy Optimization", color: "from-teal-500 to-cyan-500" },
+            { icon: Zap, text: "Real-Time Availability", color: "from-blue-500 to-emerald-500" },
+            { icon: BatteryCharging, text: "Smart Booking System", color: "from-emerald-500 to-teal-500" },
+            { icon: Car, text: "Dynamic Pricing", color: "from-teal-500 to-cyan-500" },
           ].map((item, index) => (
             <React.Fragment key={index}>
               <div className="group relative">
@@ -85,7 +85,7 @@ const SectionThree = () => {
               className="relative px-12 py-5 text-xl font-bold text-white rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 shadow-2xl hover:shadow-emerald-500/50 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center gap-3 mx-auto"
             >
               <Sparkles className="w-5 h-5 animate-spin" />
-              Reserve Your Spot — Be an Early Pioneer
+              Join Early Access Waitlist
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -95,23 +95,23 @@ const SectionThree = () => {
         <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
             {
-              title: "Smart Route Planning",
-              description: "Orbit plans intelligent routes that keep your fleet confident — never worry about running out of charge with predictive analytics.",
-              image: "/route.png",
+              title: "Wait-Time Prediction",
+              description: "Drivers see real-time charger availability and predicted wait times. Our slot showcase system eliminates queuing and maximizes station throughput.",
+              image: "/wait-time.png",
               gradient: "from-blue-500/10 to-emerald-500/10",
               iconColor: "text-blue-600",
             },
             {
-              title: "Optimized Charging",
-              description: "Smart charging recommendations ensure optimal stops along the way, reducing downtime and maximizing efficiency.",
-              image: "/charger.png",
+              title: "CPO Analytics Dashboard",
+              description: "Track utilization rates, revenue per charger, downtime percentage, and payback periods. Get booking analytics and revenue forecasts to optimize operations.",
+              image: "/dashboard.png",
               gradient: "from-emerald-500/10 to-teal-500/10",
               iconColor: "text-emerald-600",
             },
             {
-              title: "Energy Insights",
-              description: "Track and optimize your EV fleet's energy usage with real-time analytics and actionable insights for cost savings.",
-              image: "/optimize.png",
+              title: "Intelligent Operations",
+              description: "Dynamic pricing adjusts based on demand and time-of-day. Predictive maintenance flags failures before they happen, with automated alerts and grid load optimization.",
+              image: "/dynamic-pricing.png",
               gradient: "from-teal-500/10 to-cyan-500/10",
               iconColor: "text-teal-600",
             },

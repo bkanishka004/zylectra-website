@@ -100,7 +100,7 @@ const SectionFive: React.FC = () => {
             <span className="text-xl text-gray-900">is that brain.</span>
           </div>
           <p className="text-gray-600 italic">
-            Orbit is just where it starts.
+            Zylectra Charge is just where it starts.
           </p>
         </div>
       </div>
