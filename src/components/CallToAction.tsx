@@ -20,27 +20,42 @@ const CallToAction = () => {
     setIsLoading(true);
 
     const adminTemplateParams = {
-      to_email: import.meta.env.VITE_YOUR_EMAIL!,
+      to_email: "zylectra.official@gmail.com", // Replace with your actual email
       user_email: email,
       user_type: userType,
     };
 
     try {
-      // Send email to YOU
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+      // Prepare parallel tasks: admin email, user confirmation email, Google Sheets append
+      const adminEmailPromise = emailjs.send(
+        "service_6mnuz7s", // Replace with your EmailJS service ID
+        "template_boopanl", // Replace with your admin template ID
         adminTemplateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+        "JQ3wW_iNN0zk-FlV8" // Replace with your EmailJS public key
       );
 
-      // Send confirmation email to USER
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_CONFIRM_TEMPLATE_ID!,
+      const userEmailPromise = emailjs.send(
+        "service_6mnuz7s", // Replace with your EmailJS service ID
+        "template_lm7nhvp", // Replace with your user confirmation template ID
         { to_email: email, user_type: userType },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+        "JQ3wW_iNN0zk-FlV8" // Replace with your EmailJS public key
       );
+
+      const sheetUrl = "https://script.google.com/macros/s/AKfycbwMGZmYi5iHtaT2wZVwD7XYj0AdjF4DlkCS3jdfolzd0N-K6Qfg5b-oUcfefr7NbSAD/exec"; // Replace with your Google Apps Script web app URL
+      const sheetPromise = sheetUrl
+        ? fetch(sheetUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: new URLSearchParams({
+              email,
+              user_type: userType,
+              timestamp: new Date().toISOString(),
+            }),
+            keepalive: true,
+          }).catch(() => undefined)
+        : Promise.resolve(undefined);
+
+      await Promise.all([adminEmailPromise, userEmailPromise, sheetPromise]);
 
       setIsSubmitted(true);
       setEmail('');
