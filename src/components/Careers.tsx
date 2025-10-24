@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { ENV_CONFIG } from '../config/env';
 
 type HackathonFormData = {
   name: string;
@@ -22,7 +23,7 @@ const Careers: React.FC = () => {
 
   const sendHackathonSignupEmail = async (formData: HackathonFormData) => {
     const templateParams = {
-      to_email: 'zylectra.official@gmail.com',
+      to_email: ENV_CONFIG.COMPANY.EMAIL,
       from_name: formData.name,
       from_email: formData.email,
       github: formData.github || 'Not provided',
@@ -32,10 +33,10 @@ const Careers: React.FC = () => {
     };
 
     return emailjs.send(
-      'service_qnk95di',
-      'template_244j7jz',
+      ENV_CONFIG.EMAILJS.SERVICE_ID_CAREERS,
+      ENV_CONFIG.EMAILJS.TEMPLATES.HACKATHON_SIGNUP,
       templateParams,
-      'SOTgC69s6tm3hBuLD'
+      ENV_CONFIG.EMAILJS.PUBLIC_KEYS.CAREERS
     );
   };
 
@@ -49,10 +50,10 @@ const Careers: React.FC = () => {
     };
 
     return emailjs.send(
-      'service_qnk95di',
-      'template_8hdvzeo',
+      ENV_CONFIG.EMAILJS.SERVICE_ID_CAREERS,
+      ENV_CONFIG.EMAILJS.TEMPLATES.THANKYOU,
       templateParams,
-      'SOTgC69s6tm3hBuLD'
+      ENV_CONFIG.EMAILJS.PUBLIC_KEYS.CAREERS
     );
   };
 
@@ -192,11 +193,10 @@ const Careers: React.FC = () => {
               </button>
 
               {submissionStatus && (
-                <div className={`text-center p-4 rounded-xl ${
-                  submissionStatus.includes('successfully') 
-                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' 
-                    : 'bg-red-50 text-red-700 border border-red-200'
-                }`}>
+                <div className={`text-center p-4 rounded-xl ${submissionStatus.includes('successfully')
+                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                  : 'bg-red-50 text-red-700 border border-red-200'
+                  }`}>
                   <p className="font-semibold">{submissionStatus}</p>
                 </div>
               )}

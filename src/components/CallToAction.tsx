@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, ArrowRight, Check, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { ENV_CONFIG } from '../config/env';
 
 const CallToAction = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const CallToAction = () => {
     setIsLoading(true);
 
     const adminTemplateParams = {
-      to_email: "zylectra.official@gmail.com", // Replace with your actual email
+      to_email: ENV_CONFIG.COMPANY.EMAIL,
       user_email: email,
       user_type: userType,
     };
@@ -28,20 +29,20 @@ const CallToAction = () => {
     try {
       // Prepare parallel tasks: admin email, user confirmation email, Google Sheets append
       const adminEmailPromise = emailjs.send(
-        "service_6mnuz7s", // Replace with your EmailJS service ID
-        "template_boopanl", // Replace with your admin template ID
+        ENV_CONFIG.EMAILJS.SERVICE_ID_CTA,
+        ENV_CONFIG.EMAILJS.TEMPLATES.ADMIN,
         adminTemplateParams,
-        "JQ3wW_iNN0zk-FlV8" // Replace with your EmailJS public key
+        ENV_CONFIG.EMAILJS.PUBLIC_KEYS.CTA
       );
 
       const userEmailPromise = emailjs.send(
-        "service_6mnuz7s", // Replace with your EmailJS service ID
-        "template_lm7nhvp", // Replace with your user confirmation template ID
+        ENV_CONFIG.EMAILJS.SERVICE_ID_CTA,
+        ENV_CONFIG.EMAILJS.TEMPLATES.USER_CONFIRMATION,
         { to_email: email, user_type: userType },
-        "JQ3wW_iNN0zk-FlV8" // Replace with your EmailJS public key
+        ENV_CONFIG.EMAILJS.PUBLIC_KEYS.CTA
       );
 
-      const sheetUrl = "https://script.google.com/macros/s/AKfycbwMGZmYi5iHtaT2wZVwD7XYj0AdjF4DlkCS3jdfolzd0N-K6Qfg5b-oUcfefr7NbSAD/exec"; // Replace with your Google Apps Script web app URL
+      const sheetUrl = ENV_CONFIG.GOOGLE_SHEETS_URL;
       const sheetPromise = sheetUrl
         ? fetch(sheetUrl, {
             method: 'POST',

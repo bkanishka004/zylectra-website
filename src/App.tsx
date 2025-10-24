@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,8 +12,16 @@ import SectionSix from './components/Section6';
 import Section7 from './components/Section7';
 import Section8 from './components/Section8';
 import Section9 from './components/Section9';
+import { validateEnvConfig } from './config/env';
 
 function MainContent() {
+  useEffect(() => {
+    // Validate environment configuration on app startup
+    if (import.meta.env.DEV) {
+      validateEnvConfig();
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
