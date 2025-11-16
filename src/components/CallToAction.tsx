@@ -98,7 +98,7 @@ const CallToAction = () => {
             
             <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Get Early Access to 
-              <span className="block text-emerald-200 mt-2">Zylectra Charge</span>
+              <span className="block text-emerald-200 mt-2">Zylectra</span>
             </h2>
             
             <div className="w-24 h-1 bg-emerald-300 mx-auto mb-6 rounded-full"></div>
@@ -237,7 +237,7 @@ const CallToAction = () => {
                 </div>
                 <div className="text-center">
                   <h4 className="font-semibold text-white mb-1">Early Access Perks</h4>
-                  <p className="text-emerald-200 text-sm">First to experience Zylectra Charge</p>
+                  <p className="text-emerald-200 text-sm">First to experience Zylectra</p>
                 </div>
               </div>
             </div>

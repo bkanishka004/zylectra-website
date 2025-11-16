@@ -1,35 +1,35 @@
 import React from "react";
-import { Battery, MapPin, Network, Zap } from "lucide-react";
+import { TrendingUp, Zap, Brain, Clock } from "lucide-react";
 
 const SectionTwo = () => {
   const items = [
   {
-    icon: <Battery className="w-12 h-12 text-red-500" />,
-    text: "Real-time wait & charger availability",
-    bgGradient: "from-red-50 to-orange-50",
-    borderColor: "border-red-200",
-    glowColor: "shadow-red-100"
+    icon: <Brain className="w-12 h-12 text-emerald-500" />,
+    text: "AI route optimization with real-time battery & traffic data",
+    bgGradient: "from-emerald-50 to-teal-50",
+    borderColor: "border-emerald-200",
+    glowColor: "shadow-emerald-100"
   },
   {
-    icon: <MapPin className="w-12 h-12 text-amber-500" />,
-    text: "Slot occupancy visibility to cut queues",
-    bgGradient: "from-amber-50 to-yellow-50",
-    borderColor: "border-amber-200",
-    glowColor: "shadow-amber-100"
-  },
-  {
-    icon: <Network className="w-12 h-12 text-blue-500" />,
-    text: "CPO dashboard: utilization & revenue",
+    icon: <Clock className="w-12 h-12 text-blue-500" />,
+    text: "Cut charging downtime by up to 15% with smart scheduling",
     bgGradient: "from-blue-50 to-indigo-50",
     borderColor: "border-blue-200",
     glowColor: "shadow-blue-100"
   },
   {
-    icon: <Zap className="w-12 h-12 text-green-500" />,
-    text: "Dynamic pricing & predictive maintenance",
-    bgGradient: "from-green-50 to-emerald-50",
-    borderColor: "border-green-200",
-    glowColor: "shadow-green-100"
+    icon: <TrendingUp className="w-12 h-12 text-purple-500" />,
+    text: "Boost fleet utilization by up to 20% with predictive dispatch",
+    bgGradient: "from-purple-50 to-pink-50",
+    borderColor: "border-purple-200",
+    glowColor: "shadow-purple-100"
+  },
+  {
+    icon: <Zap className="w-12 h-12 text-amber-500" />,
+    text: "Dynamic re-routing based on driver behavior & energy patterns",
+    bgGradient: "from-amber-50 to-orange-50",
+    borderColor: "border-amber-200",
+    glowColor: "shadow-amber-100"
   },
 ];
 
@@ -47,28 +47,28 @@ const SectionTwo = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
         <div className="mb-16">
-          <div className="inline-flex items-center justify-center px-4 py-2 bg-red-100 text-red-600 text-sm font-medium rounded-full mb-6 animate-fade-in">
+          <div className="inline-flex items-center justify-center px-4 py-2 bg-emerald-100 text-emerald-600 text-sm font-medium rounded-full mb-6 animate-fade-in">
             <Zap className="w-4 h-4 mr-2" />
-            Fleet & CPO Insights
+            Fleet Optimization Platform
           </div>
           
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in">
             <span className="block mb-4">
-              EV Charging Operations,{" "}
+              EV Fleet Management,{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Simplified
+                Reimagined
               </span>
             </span>
             <span className="block">
-              From Queues to Revenue{" "}
-              <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                Optimized
+              From Manual Planning to{" "}
+              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+                AI-Powered Efficiency
               </span>
             </span>
           </h2>
 
           <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
-            Maximize utilization, reduce downtime, and forecast revenue all from a single dashboard.
+            Stop wasting time on manual route planning. Let AI optimize every mile, every charge, every vehicle.
           </p>
         </div>
 
@@ -110,7 +110,7 @@ const SectionTwo = () => {
 
         <div className="mt-20 opacity-0 animate-fade-in [animation-delay:1.5s] [animation-fill-mode:forwards]">
           <p className="text-lg text-gray-500 mb-6">
-            Turn your charging stations into a revenue-generating, efficient network.
+            Transform your EV fleet from reactive to predictive, from inefficient to optimized.
           </p>
           <div className="w-1 h-8 bg-gradient-to-b from-emerald-400 to-transparent mx-auto animate-bounce"></div>
         </div>

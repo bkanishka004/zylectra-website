@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Car, BatteryCharging, Zap, ArrowRight, Sparkles } from "lucide-react";
+import { TrendingUp, Zap, ArrowRight, Sparkles, Brain, Target } from "lucide-react";
 
 const SectionThree = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,23 +31,23 @@ const SectionThree = () => {
           <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="inline-flex items-center gap-2 px-6 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6 shadow-sm">
               <Sparkles className="w-4 h-4" />
-              Introducing Zylectra Charge
+              AI-Powered Fleet Optimization
             </div>
 
             <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-8 leading-snug">
-              Charging infrastructure
+              Route optimization
               <br />
               <span className="block mt-2 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent animate-pulse">
-                that thinks ahead.
+                that learns and adapts.
               </span>
             </h2>
 
             <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Zylectra Charge is the{" "}
+              Zylectra is the{" "}
               <span className="font-bold text-gray-900 bg-gradient-to-r from-emerald-100 to-teal-100 px-2 py-1 rounded-lg">
                 intelligent platform
               </span>
-              {" "}for CPOs and EV fleets to maximize uptime and revenue:
+              {" "}for fleet operators to cut downtime, boost utilization, and maximize profitability:
             </p>
           </div>
         </div>
@@ -55,9 +55,9 @@ const SectionThree = () => {
         {/* Connection Cards */}
         <div className={`flex flex-col lg:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
-            { icon: Zap, text: "Real-Time Availability", color: "from-blue-500 to-emerald-500" },
-            { icon: BatteryCharging, text: "Smart Booking System", color: "from-emerald-500 to-teal-500" },
-            { icon: Car, text: "Dynamic Pricing", color: "from-teal-500 to-cyan-500" },
+            { icon: Brain, text: "AI Route Planning", color: "from-purple-500 to-emerald-500" },
+            { icon: Target, text: "Predictive Dispatch", color: "from-emerald-500 to-teal-500" },
+            { icon: TrendingUp, text: "Fleet Analytics", color: "from-teal-500 to-cyan-500" },
           ].map((item, index) => (
             <React.Fragment key={index}>
               <div className="group relative">
@@ -95,23 +95,23 @@ const SectionThree = () => {
         <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
             {
-              title: "Wait-Time Prediction",
-              description: "Drivers see real-time charger availability and predicted wait times. Our slot showcase system eliminates queuing and maximizes station throughput.",
-              image: "/wait-time.png",
-              gradient: "from-blue-500/10 to-emerald-500/10",
-              iconColor: "text-blue-600",
+              title: "Driver-Adaptive Routes",
+              description: "Routes dynamically adjust based on each driver's unique style, energy consumption patterns, and efficiency. Real-time optimization considers battery levels, traffic, and charging station availability.",
+              image: "/driver-routes.avif",
+              gradient: "from-purple-500/10 to-emerald-500/10",
+              iconColor: "text-purple-600",
             },
             {
-              title: "CPO Analytics Dashboard",
-              description: "Track utilization rates, revenue per charger, downtime percentage, and payback periods. Get booking analytics and revenue forecasts to optimize operations.",
-              image: "/dashboard.png",
+              title: "Predictive Fleet Dispatch",
+              description: "AI automatically assigns the optimal vehicle, driver, and charging schedule for every job. Predict battery levels, charging needs, and vehicle availability 7 days ahead to eliminate surprise downtime.",
+              image: "/fleet.avif",
               gradient: "from-emerald-500/10 to-teal-500/10",
               iconColor: "text-emerald-600",
             },
             {
-              title: "Intelligent Operations",
-              description: "Dynamic pricing adjusts based on demand and time-of-day. Predictive maintenance flags failures before they happen, with automated alerts and grid load optimization.",
-              image: "/dynamic-pricing.png",
+              title: "What-If Simulator",
+              description: "Test fleet decisions before implementing them. Simulate adding vehicles, changing routes, or adjusting charge schedules and instantly see the impact on costs, uptime, and utilization.",
+              image: "/simulate.webp",
               gradient: "from-teal-500/10 to-cyan-500/10",
               iconColor: "text-teal-600",
             },
@@ -123,7 +123,7 @@ const SectionThree = () => {
             >
               {/* Hover Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
+              
               <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100/50 h-full">
                 {/* Image Container */}
                 <div className="relative w-full h-48 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl overflow-hidden border border-gray-200/50 mb-6 group">

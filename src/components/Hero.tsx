@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Car, MapPin, Battery, Sparkles, Target, Cpu, BoltIcon, ClockIcon, BarChartBig } from 'lucide-react';
+import { ArrowRight, Car, MapPin, Battery, Sparkles, Target, Cpu, BarChartBig } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,24 +26,25 @@ const Hero = () => {
 
   const features = [
     {
-      title: "Real-Time Availability",
-      description: "Check free chargers & predicted wait times instantly.",
-      icon: BoltIcon,
+      title: "Adaptive Route Intelligence",
+      description: "Continuously optimized routes that boost utilization and minimize charging downtime.",
+      icon: Target,
       color: "from-emerald-400 to-teal-400",
     },
     {
-      title: "Slot Showcase",
-      description: "Plan stops smartly with upcoming charger slot visibility.",
-      icon: ClockIcon,
+      title: "AI-Powered Planning",
+      description: "Automatically assigns the best vehicle, schedule, and charging plan for every trip.",
+      icon: Cpu,
       color: "from-teal-400 to-emerald-500",
     },
     {
-      title: "CPO Insights",
-      description: "Monitor charger usage, revenue & downtime at a glance.",
+      title: "Scenario Forecasting",
+      description: "Run instant simulations to avoid delays and make faster operational decisions.",
       icon: BarChartBig,
       color: "from-emerald-500 to-green-400",
     },
   ];
+
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-gradient-to-br from-slate-900 via-emerald-900/20 to-teal-900/10">
@@ -102,7 +103,7 @@ const Hero = () => {
               <Sparkles className="w-5 h-5 text-emerald-600 animate-spin" />
               <div className="absolute inset-0 bg-emerald-400 rounded-full opacity-20 animate-ping"></div>
             </div>
-            <span className="text-emerald-700 font-semibold text-lg">Introducing Zylectra Charge</span>
+            <span className="text-emerald-700 font-semibold text-lg">AI-Powered Fleet Intelligence</span>
           </div>
         </div>
 
@@ -110,10 +111,10 @@ const Hero = () => {
         <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="relative mb-8">
             <p className="sm:text-[32px] md:text-[48px] lg:text-[64px] font-black bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent leading-tight animate-pulse">
-              Make your EV
+              Optimize every mile.
             </p>
             <p className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-700 mt-2">
-              smarter and effortless.
+              Maximize every vehicle.
             </p>
             
             {/* Decorative underline */}
@@ -124,8 +125,8 @@ const Hero = () => {
         {/* Description */}
         <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} mb-12`}>
           <p className="sm:text-[18px] md:text-[20px] lg:text-[24px] text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
-            From real-time charger availability to predictive intelligence, Zylectra Charge helps drivers charge 
-            smarter and CPOs earn more.
+            AI-driven route and charging optimization that cuts downtime by 15%, boosts utilization by 20%, 
+            and transforms how fleet operators manage their EVs.
           </p>
         </div>
 
